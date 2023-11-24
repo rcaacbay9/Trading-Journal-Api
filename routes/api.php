@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/createTrade',[TradeController::class,'createTrade']);
 Route::get('/getTrade/{id}',[TradeController::class,'getTradeID']);
 Route::put('/getTrade/edit/{id}',[TradeController::class,'saveEditTrade']);
+Route::delete('/getTrade/delete/{id}',[TradeController::class,'deleteTrade']);
 
 Route::get('/getTrades',[TradeController::class,'getTrades']);
 Route::get('/getWinrate',[TradeController::class,'getWinrate']);

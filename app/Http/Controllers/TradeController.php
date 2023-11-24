@@ -149,4 +149,18 @@ class TradeController extends Controller
             }
         }
     }
+    public function deleteTrade($id)
+    {
+        $data = Trades::where('id', $id)
+        ->delete();
+
+        if ($data){
+            return new JsonResponse([
+                "message"=>'Data has been deleted.'
+            ],200);
+        }
+        return new JsonResponse([
+            "message"=>'Error'
+        ]);
+    }
 }
